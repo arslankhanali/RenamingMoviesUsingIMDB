@@ -5,6 +5,19 @@ import re
 import math
 
 def get_movie_information(full_movie_url):
+    """
+    Extracts information from the link of a movie's imdb page
+
+    Parameters:
+    full_movie_url (str): link of a movie's imdb page
+
+    Returns:
+    tuple:(title,year,rating,votes,time.strip(),maturity_rating.strip()
+    ,genre,summary)
+
+    Future:
+    Try to extract more inforamtion and more efficiently
+    """
     response = requests.get(full_movie_url)
     soup = BeautifulSoup(response.text, 'html.parser')
 
@@ -38,6 +51,19 @@ def get_movie_information(full_movie_url):
     ,genre,summary)
 
 def clean_movie_name(name):
+    """
+    Parses raw movie names to make searchable movie name for imdb
+
+    Parameters:
+    name(str): raw name
+
+    Returns:
+    str:searchable movie name for imdb
+
+    Future:
+    Make more robust 
+    Cater alot more edge cases
+    """
     flag=1
     #replace . with white spaces
     name=name.replace('.',' ')
@@ -60,6 +86,19 @@ def clean_movie_name(name):
     return name
 
 def find_movie_url(name):
+    """
+    find imdb url from the movies name
+
+    Parameters:
+    name(str): cleaned up name
+
+    Returns:
+    str:url
+
+    Future:
+    Right now only works if we sucessfully find a movie
+    Picks the first movie only
+    """
     response = requests.get('https://www.imdb.com/find?q='+name)
     soup = BeautifulSoup(response.text, 'html.parser')
     
@@ -69,6 +108,18 @@ def find_movie_url(name):
         return None
 
 def get_result(raw_name):
+    """
+    end to end function. gets information from raw name
+
+    Parameters:
+    raw name(str): original file name
+
+    Returns:
+    str: information of a movie from imdb, used to rename the file accordingly 
+
+    Future:
+    
+    """
     while True:
         try:
             clean_name=clean_movie_name(raw_name)
@@ -96,5 +147,17 @@ def get_result(raw_name):
             
 #python imdb_scrapper.py "matrix#^%&* reload100000000ed"            
 if __name__ == '__main__':
-    print(sys.argv[1]) 
-    get_result(sys.argv[1])
+    """
+    pass any string containing a movie name.
+
+    e.g.
+    python imdb_scrapper.py "matrix#^%&* reload100000000ed 
+
+    should give information for matrix reloaded
+    
+    """
+    try:
+        print(sys.argv[1]) 
+        get_result(sys.argv[1])
+    except:
+        pass
