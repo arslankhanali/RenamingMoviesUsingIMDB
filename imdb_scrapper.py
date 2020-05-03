@@ -95,6 +95,6 @@ def get_result(raw_name):
             break
             
 #python imdb_scrapper.py "matrix#^%&* reload100000000ed"            
-# if __name__ == '__main__':
-#     print(sys.argv[1]) 
-#     get_result(sys.argv[1])
+if __name__ == '__main__':
+    print(sys.argv[1]) 
+    get_result(sys.argv[1])
