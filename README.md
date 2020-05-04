@@ -13,6 +13,7 @@ python rename_files.py <path of your folder>
 ```
 
 ## Has some other very useful function 
+
 ```yml
 def get_movie_information(full_movie_url):
     """
@@ -30,7 +31,7 @@ def get_movie_information(full_movie_url):
     """
 
 ``` 
-```yml
+```python
 def clean_movie_name(name):
     """
     Parses raw movie names to make searchable movie name for imdb
@@ -46,7 +47,7 @@ def clean_movie_name(name):
     Cater alot more edge cases
     """
 ``` 
-```yml
+```java
 def find_movie_url(name):
     """
     find imdb url from the movies name
@@ -62,8 +63,8 @@ def find_movie_url(name):
     Picks the first movie only
     """
 ``` 
-```yml
-ef get_result(raw_name):
+```python
+def get_result(raw_name):
     """
     end to end function. gets information from raw name
 
@@ -77,7 +78,7 @@ ef get_result(raw_name):
     
     """
 ``` 
-```yml
+```java
 def rename_all_in_path(path):
     """
     renamed all movies in given path
@@ -96,6 +97,5 @@ def rename_all_in_path(path):
 ## Tested and written on mac os
 
 Please fork and add more features.\
-
 Cheers\
-RC\
+RC
