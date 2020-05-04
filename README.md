@@ -1,19 +1,19 @@
-Have a folder with messy movie names?
-Problem Solved!
+# Have a folder with messy movie names?
+# Problem Solved!
 
-Requirments:
+## Requirments:
  - pip3 install virtualenv
  - virtualenv venv
  - source venv/bin/activate
  - pip3 install -r requirements.txt
 
-Run
-``` 
+## Run
+```yml
 python rename_files.py <path of your folder>
 ```
 
-Has some other very useful function 
-``` 
+## Has some other very useful function 
+```yml
 def get_movie_information(full_movie_url):
     """
     Extracts information from the link of a movie's imdb page
@@ -30,7 +30,7 @@ def get_movie_information(full_movie_url):
     """
 
 ``` 
-``` 
+```yml
 def clean_movie_name(name):
     """
     Parses raw movie names to make searchable movie name for imdb
@@ -46,7 +46,7 @@ def clean_movie_name(name):
     Cater alot more edge cases
     """
 ``` 
-``` 
+```yml
 def find_movie_url(name):
     """
     find imdb url from the movies name
@@ -62,7 +62,7 @@ def find_movie_url(name):
     Picks the first movie only
     """
 ``` 
-``` 
+```yml
 ef get_result(raw_name):
     """
     end to end function. gets information from raw name
@@ -77,7 +77,7 @@ ef get_result(raw_name):
     
     """
 ``` 
-``` 
+```yml
 def rename_all_in_path(path):
     """
     renamed all movies in given path
@@ -93,9 +93,9 @@ def rename_all_in_path(path):
     """
 ``` 
 
-Tested and written on mac os
+## Tested and written on mac os
 
-Please fork and add more features.
+Please fork and add more features.\
 
-Cheers
-RC
+Cheers\
+RC\
